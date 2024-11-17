@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <img src="./images/logo.svg" alt="Logo">
+
+    <h1>
+      <strong>We're</strong>
+      <br> coming <br>soon
+
+    </h1>
+    <p>Hello fellow shoppers! We're currently building our new fashion store.
+      Add your email below to stay up-to-date with announcements and our launch deals.</p>
+
+    <form id="email-form">
+      <input type="email" id="emailInput" placeholder="Email Address">
+      <img id="errorIcon" src="./images/icon-error.svg" alt="Error">
+      <button type='button' onclick="validateEmailInput()">
+        <img src="./images/icon-arrow.svg" alt="">
+      </button>
+    </form>
+    <span id="emailFeedback"></span>
+
+    <footer>
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Verdiana Kumala</a>.
+      </p>
+    </footer>
+  </div>
+
+  <div class="image">
+    <img src="./images/hero-desktop.jpg" alt="Hero">
+  </div>
+
+  <script>
+    function validateEmailInput() {
+      const emailInput = document.getElementById('emailInput').value;
+      const feedbackElement = document.getElementById('emailFeedback');
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (emailRegex.test(emailInput)) {
+        feedbackElement.textContent = ""; // Email is valid
+
+        errorIcon.style.visibility = 'hidden';
+      } else {
+        feedbackElement.textContent = "Please enter a valid email address.";
+        errorIcon.style.visibility = 'visible';
+      }
+    } const errorIcon = document.getElementById('errorIcon');
+    errorIcon.style.visibility = 'hidden';
+  </script>
+</body>
+
+</html>
